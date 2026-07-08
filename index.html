@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stichting Alemaya — Blijvende infrastructuur voor gemeenschappen</title>
-<meta name="description" content="Stichting Alemaya ontwikkelt en beheert digitale en fysieke communityplatforms die sociale cohesie, vakmanschap en gelijke kansen bevorderen. Zonder winstoogmerk, met professionele uitvoering.">
+<title>Stichting Alemaya — Communityplatforms voor vakmanschap en kansen</title>
+<meta name="description" content="Stichting Alemaya ontwikkelt maatschappelijke programma's rond ontmoeting, vakmanschap en praktische kansen. Te beginnen met Vakgenoten en Kappersmodellen.nl: 35.000 leden, duizenden matches per jaar.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 14 L20 88 M50 14 L80 88' stroke='%232B2825' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M37 76 A 13 13 0 0 1 63 76 Z' fill='%23C05A2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +84,7 @@ nav a:hover{color:var(--terra)}
 .hero{
   background:var(--charcoal);
   color:var(--papier);
-  padding:110px 0 100px;
+  padding:100px 0 84px;
   position:relative;
   overflow:hidden;
 }
@@ -95,36 +95,43 @@ nav a:hover{color:var(--terra)}
   opacity:.32;pointer-events:none;
 }
 .hero::after{
-  content:"";position:absolute;left:50%;bottom:-32vw;transform:translateX(18%);
-  width:64vw;height:64vw;min-width:560px;min-height:560px;border-radius:50%;
-  background:radial-gradient(circle at 50% 42%, rgba(217,126,82,0.20), rgba(192,90,46,0.08) 55%, transparent 72%);
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(43,40,37,0.30),rgba(43,40,37,0.55));
   pointer-events:none;
 }
 .hero .wrap{position:relative;z-index:1}
 .hero .eyebrow{color:var(--terra-licht);margin-bottom:26px;display:block}
 .hero h1{
-  font-size:clamp(34px,5.2vw,58px);
-  max-width:15ch;
+  font-size:clamp(33px,4.8vw,54px);
+  max-width:18ch;
   color:var(--papier);
   margin-bottom:28px;
 }
 .hero p{
-  max-width:56ch;font-size:18.5px;line-height:1.7;
-  color:rgba(247,242,233,0.78);
+  max-width:58ch;font-size:18.5px;line-height:1.7;
+  color:rgba(247,242,233,0.85);
 }
-.hero-meta{
-  margin-top:56px;padding-top:28px;border-top:1px solid var(--lijn-donker);
-  display:flex;gap:48px;flex-wrap:wrap;
+
+/* Bewijsblokken in de hero */
+.hero-cijfers{
+  margin-top:56px;padding-top:36px;border-top:1px solid var(--lijn-donker);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:32px 48px;
 }
-.hero-meta div{font-size:14px;color:rgba(247,242,233,0.58)}
-.hero-meta strong{
-  display:block;font-family:'Source Serif 4',serif;font-size:17px;font-weight:500;
-  color:var(--papier);margin-bottom:2px;
+.hero-cijfers .cijfer strong{
+  display:block;font-family:'Source Serif 4',serif;font-weight:600;
+  font-size:29px;line-height:1.15;color:var(--terra-licht);margin-bottom:8px;
+}
+.hero-cijfers .cijfer span{
+  display:block;font-size:14.5px;line-height:1.6;
+  color:rgba(247,242,233,0.72);max-width:32ch;
+}
+@media(max-width:720px){
+  .hero-cijfers{grid-template-columns:1fr;gap:26px}
 }
 
 /* ── Secties ─────────────────────────── */
 section{padding:96px 0}
-.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head{max-width:680px;margin-bottom:56px}
 .sec-head .eyebrow{display:block;margin-bottom:14px}
 .sec-head h2{font-size:clamp(27px,3.4vw,38px);color:var(--charcoal)}
 .sec-head p{margin-top:16px;color:var(--inkt-zacht)}
@@ -163,10 +170,10 @@ section{padding:96px 0}
   display:inline-block;margin-top:10px;font-size:11.5px;letter-spacing:0.08em;
   padding:4px 10px;border:1px solid var(--groen);border-radius:2px;color:var(--groen);
 }
-.prog-label .status.prep{border-color:var(--lijn);color:var(--inkt-zacht)}
 .prog h3{font-size:25px;color:var(--charcoal);margin-bottom:14px}
 .prog h3 span{color:var(--inkt-zacht);font-weight:400}
 .prog-body p{color:var(--inkt-zacht);max-width:62ch}
+.prog-body p + p{margin-top:16px}
 .prog-cijfers{
   display:flex;gap:52px;flex-wrap:wrap;margin-top:30px;
 }
@@ -174,6 +181,9 @@ section{padding:96px 0}
 .prog-cijfers strong{
   display:block;font-family:'Source Serif 4',serif;font-weight:600;
   font-size:30px;color:var(--terra);line-height:1.1;margin-bottom:4px;
+}
+.prog-naschrift{
+  margin-top:28px;font-size:14.5px;color:var(--inkt-zacht);max-width:66ch;
 }
 
 /* Werkwijze / governance */
@@ -248,15 +258,19 @@ section{padding:96px 0}
 }
 @media(max-width:720px){.register-row dd{padding-top:0}}
 .register-row dd em{font-style:normal;color:rgba(247,242,233,0.45)}
+.register-row dd a{color:rgba(247,242,233,0.92);text-decoration-color:var(--terra-licht);text-underline-offset:3px}
 .register-note{
   margin-top:24px;font-size:13.5px;color:rgba(247,242,233,0.5);max-width:66ch;
 }
+.register-note a{color:rgba(247,242,233,0.8);text-decoration-color:var(--terra-licht);text-underline-offset:3px}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:40px}}
 .contact h2{font-size:clamp(26px,3.2vw,36px);color:var(--charcoal);margin-bottom:18px}
 .contact p{color:var(--inkt-zacht);max-width:48ch}
+.contact p + p{margin-top:14px}
+.contact p a{text-decoration-color:var(--terra);text-underline-offset:3px}
 .contact-blok{border:1px solid var(--lijn);background:var(--wit);padding:36px}
 .contact-blok dl div{display:flex;flex-direction:column;gap:2px;padding:14px 0;border-bottom:1px solid var(--lijn)}
 .contact-blok dl div:last-child{border-bottom:none}
@@ -292,7 +306,7 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
     <nav aria-label="Hoofdnavigatie">
       <a href="#programmas">Programma's</a>
       <a href="#werkwijze">Werkwijze</a>
-      <a href="#verantwoording">Verantwoording</a>
+      <a href="subsidieverleners.html">Voor subsidieverleners</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -304,12 +318,21 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
   <div class="hero">
     <div class="wrap">
       <span class="eyebrow fade">Stichting zonder winstoogmerk · Amsterdam</span>
-      <h1 class="fade d1">Blijvende infrastructuur voor gemeenschappen die elkaar versterken.</h1>
-      <p class="fade d2">Stichting Alemaya ontwikkelt en beheert digitale en fysieke communityplatforms die sociale cohesie, vakmanschap en gelijke kansen bevorderen — met een onbezoldigd bestuur en professionele uitvoering.</p>
-      <div class="hero-meta fade d3">
-        <div><strong>Vakgenoten</strong>handelsnaam voor programma's</div>
-        <div><strong>Kappersmodellen.nl</strong>zeven jaar bewezen platform</div>
-        <div><strong>Gemeente Amsterdam</strong>statutaire zetel</div>
+      <h1 class="fade d1">Communityplatforms die mensen, vakmanschap en kansen verbinden.</h1>
+      <p class="fade d2">Stichting Alemaya ontwikkelt maatschappelijke programma's rond ontmoeting, vakmanschap en praktische kansen. We bouwen voort op bestaande gemeenschappen, te beginnen met Vakgenoten en Kappersmodellen.nl: een actief platform met 35.000 leden en duizenden matches per jaar.</p>
+      <div class="hero-cijfers fade d3">
+        <div class="cijfer">
+          <strong>7 jaar actief</strong>
+          <span>Kappersmodellen.nl bestaat sinds 2018 en vormt de basis voor het programma Vakgenoten.</span>
+        </div>
+        <div class="cijfer">
+          <strong>35.000 leden</strong>
+          <span>Een bestaande community van modellen, studenten, opleiders en vakmensen.</span>
+        </div>
+        <div class="cijfer">
+          <strong>7.000+ matches per jaar</strong>
+          <span>Praktische verbinding tussen opleiding, vakmanschap en publiek.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -334,15 +357,16 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Programma's</span>
-        <h2>Bewezen platforms, publiek toegankelijk</h2>
-        <p>Elk programma van de stichting is kosteloos voor de deelnemers en wordt uitgevoerd onder de handelsnaam Vakgenoten.</p>
+        <h2>Eén helder programma, gebouwd op een bewezen platform</h2>
+        <p>Stichting Alemaya is de juridische stichting. Vakgenoten is het maatschappelijke programma rond vakmanschap, ontmoeting en toegankelijke dienstverlening. Kappersmodellen.nl is het eerste bestaande platform binnen Vakgenoten.</p>
       </div>
       <div class="prog-list">
         <article class="prog">
           <div class="prog-label">Programma 01<span class="status">Actief</span></div>
           <div class="prog-body">
-            <h3>Kappersmodellen.nl <span>· Vakgenoten</span></h3>
-            <p>Al zeven jaar verbindt Kappersmodellen.nl kappers in opleiding met oefenmodellen uit de buurt. Studenten doen praktijkervaring op, modellen krijgen kosteloos een knip- of kleurbehandeling, en kapsalons en opleiders vinden nieuw talent. Het platform draait op een actieve gemeenschap die elkaar dagelijks weet te vinden.</p>
+            <h3>Vakgenoten <span>· Kappersmodellen.nl</span></h3>
+            <p>Met Vakgenoten bouwt Stichting Alemaya voort op Kappersmodellen.nl: een bestaande community waar kappersstudenten, beginnende vakmensen en modellen elkaar vinden. Het programma maakt vakontwikkeling toegankelijker, versterkt sociale verbinding en verlaagt drempels voor mensen die praktische diensten of oefenkansen zoeken.</p>
+            <p>Deelname is kosteloos. Studenten doen praktijkervaring op, deelnemers krijgen een verzorgde behandeling, en opleiders vinden nieuw talent — een uitwisseling waar de buurt als geheel sterker van wordt.</p>
             <div class="prog-cijfers">
               <div><strong>7 jaar</strong>onafgebroken actief</div>
               <div><strong>35.000</strong>leden in de community</div>
@@ -350,14 +374,8 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
             </div>
           </div>
         </article>
-        <article class="prog">
-          <div class="prog-label">Programma 02<span class="status prep">In voorbereiding</span></div>
-          <div class="prog-body">
-            <h3>De Warme Was</h3>
-            <p>Gratis wasbeurten voor Amsterdammers in een kwetsbare positie, in samenwerking met wasserettes in de buurt. Een laagdrempelige voorziening die bestaanszekerheid en waardigheid ondersteunt, en tegelijk lokale ondernemers betrekt bij de sociale basis van hun wijk.</p>
-          </div>
-        </article>
       </div>
+      <p class="prog-naschrift">De stichting is zo ingericht dat meerdere programma's onder één stevige basis kunnen groeien. Uitbreiding gebeurt zorgvuldig: een nieuw programma start pas wanneer draagvlak, financiering en uitvoering aantoonbaar geregeld zijn.</p>
     </div>
   </section>
 
@@ -387,8 +405,16 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
           <p>De ontwikkeling en het beheer van de platforms zijn belegd bij professionele uitvoerende partners, tegen marktconforme voorwaarden en op basis van heldere afspraken.</p>
         </div>
         <div class="gov-cell">
-          <h3>Zorgvuldige besluitvorming</h3>
-          <p>Bij een mogelijk tegenstrijdig belang wordt dit vastgelegd en onthoudt het betrokken bestuurslid zich van besluitvorming. Afspraken met verbonden partijen worden transparant gedocumenteerd.</p>
+          <h3>Per programma vastgelegd</h3>
+          <p>Per programma worden begroting, uitvoering en verantwoording afzonderlijk vastgelegd. Voor elke partner is daardoor altijd te herleiden wat er met een bijdrage gebeurt.</p>
+        </div>
+        <div class="gov-cell">
+          <h3>Subsidies blijven bij het programma</h3>
+          <p>Subsidies worden uitsluitend ingezet voor het betreffende programma en niet vermengd met andere activiteiten. Elke bijdrage is afzonderlijk te volgen in de administratie.</p>
+        </div>
+        <div class="gov-cell">
+          <h3>Transparant bij verbonden partijen</h3>
+          <p>Wanneer verbonden partijen worden ingezet, gebeurt dit transparant, marktconform en op basis van bestuursbesluitvorming, met schriftelijke vastlegging van de afspraken.</p>
         </div>
         <div class="gov-cell">
           <h3>Jaarlijkse verantwoording</h3>
@@ -420,8 +446,9 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
       </div>
       <dl class="register-table">
         <div class="register-row"><dt>Statutaire naam</dt><dd>Stichting Alemaya</dd></div>
-        <div class="register-row"><dt>Handelsnaam</dt><dd>Vakgenoten</dd></div>
+        <div class="register-row"><dt>Handelsnaam / programma</dt><dd>Vakgenoten · Kappersmodellen.nl</dd></div>
         <div class="register-row"><dt>Rechtsvorm</dt><dd>Stichting</dd></div>
+        <div class="register-row"><dt>Status</dt><dd>In oprichting · notariële akte in voorbereiding</dd></div>
         <div class="register-row"><dt>Statutaire zetel</dt><dd>Gemeente Amsterdam</dd></div>
         <div class="register-row"><dt>KvK-nummer</dt><dd><em>Volgt na inschrijving in het Handelsregister</em></dd></div>
         <div class="register-row"><dt>RSIN</dt><dd><em>Volgt na inschrijving in het Handelsregister</em></dd></div>
@@ -429,8 +456,10 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
         <div class="register-row"><dt>Beloningsbeleid</dt><dd>Bestuurders ontvangen geen beloning; uitsluitend vergoeding van gemaakte onkosten</dd></div>
         <div class="register-row"><dt>Boekjaar</dt><dd>Kalenderjaar · eerste boekjaar eindigt 31 december 2026</dd></div>
         <div class="register-row"><dt>Jaarverslag</dt><dd>Eerste jaarrekening beschikbaar in de eerste helft van 2027</dd></div>
+        <div class="register-row"><dt>Website</dt><dd>stichtingvakgenoten.nl <em>· tijdelijk adres</em></dd></div>
+        <div class="register-row"><dt>E-mail</dt><dd><a href="mailto:hello@stichtingvakgenoten.nl">hello@stichtingvakgenoten.nl</a></dd></div>
       </dl>
-      <p class="register-note">Beleidsplan en jaarstukken worden na vaststelling op deze pagina gepubliceerd. Voor vragen over governance of verantwoording kunt u rechtstreeks contact opnemen met het bestuur.</p>
+      <p class="register-note">Documenten — waaronder statuten, beleidsplan en programmabegrotingen — zijn beschikbaar op aanvraag via het bestuur. Zie ook de pagina <a href="subsidieverleners.html">voor subsidieverleners</a>.</p>
     </div>
   </section>
 
@@ -441,6 +470,7 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
         <span class="eyebrow" style="display:block;margin-bottom:14px">Contact</span>
         <h2>In gesprek over samenwerking</h2>
         <p>Bent u fonds, gemeente of maatschappelijke organisatie en wilt u meer weten over onze programma's, begroting of werkwijze? Wij lichten onze plannen graag persoonlijk toe.</p>
+        <p>Beoordeelt u een aanvraag? Op de pagina <a href="subsidieverleners.html">voor subsidieverleners</a> vindt u bewijs, governance en documenten overzichtelijk bij elkaar.</p>
       </div>
       <div class="contact-blok">
         <dl>
@@ -463,7 +493,7 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
       </svg>
       <span>© 2026 Stichting Alemaya · Amsterdam</span>
     </div>
-    <div>Handelsnaam: Vakgenoten</div>
+    <div>Programma: Vakgenoten · Kappersmodellen.nl</div>
   </div>
 </footer>
 
