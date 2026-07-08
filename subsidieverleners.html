@@ -84,7 +84,21 @@ nav a[aria-current="page"]{color:var(--terra)}
   background:var(--charcoal);
   color:var(--papier);
   padding:88px 0 76px;
+  position:relative;
+  overflow:hidden;
 }
+.paginakop::before{
+  content:"";position:absolute;inset:0;
+  background:url('images/museumplein.jpg') center 42%/cover no-repeat;
+  filter:grayscale(0.35) contrast(1.04);
+  opacity:.32;pointer-events:none;
+}
+.paginakop::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(43,40,37,0.30),rgba(43,40,37,0.55));
+  pointer-events:none;
+}
+.paginakop .wrap{position:relative;z-index:1}
 .paginakop .eyebrow{color:var(--terra-licht);margin-bottom:22px;display:block}
 .paginakop h1{
   font-size:clamp(32px,4.4vw,48px);
