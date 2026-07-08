@@ -3,435 +3,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stichting Vakgenoten — Vaktalent ontmoet de buurt</title>
+<title>Stichting Alemaya — Blijvende infrastructuur voor gemeenschappen</title>
+<meta name="description" content="Stichting Alemaya ontwikkelt en beheert digitale en fysieke communityplatforms die sociale cohesie, vakmanschap en gelijke kansen bevorderen. Zonder winstoogmerk, met professionele uitvoering.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 14 L20 88 M50 14 L80 88' stroke='%232B2825' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M37 76 A 13 13 0 0 1 63 76 Z' fill='%23C05A2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#20251F;
-  --paper:#EFEBE0;
-  --paper-card:#FBFAF4;
-  --clay:#C0703A;
-  --clay-deep:#A55E30;
-  --sage:#234E3F;
-  --sage-dark:#16352B;
-  --sage-soft:#E5EBE3;
-  --warm-line:#DED7C6;
-  --muted:#8A8472;
-  --muted-mid:#54584F;
+  --charcoal:#2B2825;
+  --charcoal-diep:#211F1C;
+  --papier:#F7F2E9;
+  --wit:#FDFBF7;
+  --inkt:#2B2825;
+  --inkt-zacht:#5C554C;
+  --terra:#C05A2E;
+  --terra-licht:#D97E52;
+  --groen:#4A6B4F;
+  --lijn:#E4DCCC;
+  --lijn-donker:rgba(247,242,233,0.16);
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
 body{
-  font-family:'Hanken Grotesk',sans-serif;
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.6;
+  font-family:'Public Sans',system-ui,sans-serif;
+  color:var(--inkt);
+  background:var(--papier);
+  line-height:1.65;
+  font-size:17px;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
-
-/* NAV */
-nav{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:26px 28px;max-width:1140px;margin:0 auto;
-}
-.logo{
-  display:flex;align-items:center;gap:14px;text-decoration:none;
-}
-.logo-mark svg{display:block;flex-shrink:0}
-.logo-text{display:flex;flex-direction:column;gap:1px;}
-.logo-text .logo-sup{
-  font-family:'Hanken Grotesk',sans-serif;
-  font-size:9px;font-weight:600;letter-spacing:.32em;
-  text-transform:uppercase;color:var(--clay);line-height:1;
-}
-.logo-text .logo-name{
-  font-family:'Spectral',serif;font-weight:600;font-size:1.25rem;
-  color:var(--sage);line-height:1;letter-spacing:-.01em;
-}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{
-  color:var(--ink);text-decoration:none;font-size:0.92rem;font-weight:500;
-  opacity:0.8;transition:opacity .2s;
-}
-.nav-links a:hover{opacity:1}
-.nav-cta{
-  background:var(--sage);color:var(--paper)!important;
-  padding:10px 20px;border-radius:100px;opacity:1!important;
-  transition:background .2s!important;
-}
-.nav-cta:hover{background:var(--sage-dark)!important}
-@media(max-width:720px){.nav-links a:not(.nav-cta){display:none}}
-
-/* HERO */
-.hero-band{
-  position:relative;
-  background-image:
-    linear-gradient(94deg, var(--paper) 0%, var(--paper) 30%, rgba(239,235,224,0.80) 49%, rgba(239,235,224,0.30) 72%, rgba(239,235,224,0.10) 100%),
-    linear-gradient(0deg, var(--paper) 5%, rgba(239,235,224,0) 35%),
-    url('images/salon-hero.jpg');
-  background-size:cover;
-  background-position:center 26%;
-  background-repeat:no-repeat;
-}
-.hero{padding:70px 0 88px;position:relative;z-index:1}
-@media(max-width:720px){
-  .hero-band{
-    background-image:
-      linear-gradient(180deg, rgba(239,235,224,0.74) 0%, rgba(239,235,224,0.92) 48%, var(--paper) 66%),
-      url('images/salon-hero.jpg');
-    background-position:center top;
-  }
-}
+::selection{background:var(--terra);color:var(--wit)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
 .eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  font-size:0.78rem;font-weight:600;letter-spacing:0.2em;
-  text-transform:uppercase;color:var(--clay);
-  margin-bottom:26px;
+  font-size:12.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--terra);
 }
-.eyebrow::before{
-  content:"";width:26px;height:1.5px;background:var(--clay);
+h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;font-weight:500;line-height:1.18}
+
+/* ── Logo ─────────────────────────── */
+.logo-mark{display:block;flex-shrink:0}
+.lockup{
+  display:flex;align-items:center;gap:13px;text-decoration:none;
 }
+.lockup-tekst{display:flex;flex-direction:column;gap:1px}
+.lockup-naam{
+  font-family:'Public Sans',sans-serif;font-size:17px;font-weight:600;
+  letter-spacing:0.22em;color:var(--charcoal);line-height:1;
+}
+.lockup-sub{
+  font-size:9.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--terra);line-height:1;
+}
+
+/* ── Header ─────────────────────────── */
+header{
+  background:var(--papier);
+  border-bottom:1px solid var(--lijn);
+  position:sticky;top:0;z-index:50;
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;
+}
+nav{display:flex;gap:32px}
+nav a{
+  text-decoration:none;font-size:14.5px;font-weight:500;color:var(--inkt-zacht);
+  transition:color .15s;
+}
+nav a:hover{color:var(--terra)}
+@media(max-width:720px){nav{display:none}}
+
+/* ── Hero ─────────────────────────── */
+.hero{
+  background:var(--charcoal);
+  color:var(--papier);
+  padding:110px 0 100px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:url('images/gemeenschap.jpg') center 32%/cover no-repeat;
+  filter:grayscale(1) contrast(1.06);
+  opacity:.13;pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;left:50%;bottom:-32vw;transform:translateX(18%);
+  width:64vw;height:64vw;min-width:560px;min-height:560px;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%, rgba(217,126,82,0.20), rgba(192,90,46,0.08) 55%, transparent 72%);
+  pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:1}
+.hero .eyebrow{color:var(--terra-licht);margin-bottom:26px;display:block}
 .hero h1{
-  font-family:'Spectral',serif;font-weight:600;
-  font-size:clamp(2.6rem,6vw,4.4rem);
-  line-height:1.04;letter-spacing:-.015em;
-  max-width:15ch;margin-bottom:28px;color:var(--ink);
+  font-size:clamp(34px,5.2vw,58px);
+  max-width:15ch;
+  color:var(--papier);
+  margin-bottom:28px;
 }
-.hero h1 em{font-style:italic;color:var(--sage)}
-.hero-lede{
-  font-size:1.15rem;max-width:46ch;color:var(--muted-mid);
-  margin-bottom:38px;line-height:1.65;
+.hero p{
+  max-width:56ch;font-size:18.5px;line-height:1.7;
+  color:rgba(247,242,233,0.78);
 }
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-.btn-primary{
-  background:var(--clay);color:#fff;text-decoration:none;
-  padding:15px 30px;border-radius:100px;font-weight:600;font-size:0.95rem;
-  transition:background .2s,transform .2s;letter-spacing:.01em;
+.hero-meta{
+  margin-top:56px;padding-top:28px;border-top:1px solid var(--lijn-donker);
+  display:flex;gap:48px;flex-wrap:wrap;
 }
-.btn-primary:hover{background:var(--clay-deep);transform:translateY(-2px)}
-.btn-ghost{
-  color:var(--ink);text-decoration:none;font-weight:600;font-size:0.95rem;
-  padding:15px 8px;display:inline-flex;align-items:center;gap:8px;
-}
-.btn-ghost svg{transition:transform .2s}
-.btn-ghost:hover svg{transform:translateX(4px)}
-
-/* STATS STRIP */
-.stats{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--warm-line);
-  border-bottom:1px solid var(--warm-line);
-  margin-top:64px;
-}
-.stat{padding:30px 26px 30px 0}
-.stat:not(:last-child){border-right:1px solid var(--warm-line);padding-left:0}
-.stat:nth-child(2){padding-left:32px}
-.stat:nth-child(3){padding-left:32px}
-.stat-num{
-  font-family:'Spectral',serif;font-size:2.5rem;font-weight:600;
-  line-height:1;letter-spacing:-.02em;margin-bottom:6px;color:var(--sage);
-}
-.stat-label{font-size:0.88rem;color:var(--muted);font-weight:500}
-@media(max-width:680px){
-  .stats{grid-template-columns:1fr}
-  .stat{border-right:none!important;border-bottom:1px solid var(--warm-line);padding:22px 0!important}
-  .stat:last-child{border-bottom:none}
+.hero-meta div{font-size:14px;color:rgba(247,242,233,0.58)}
+.hero-meta strong{
+  display:block;font-family:'Source Serif 4',serif;font-size:17px;font-weight:500;
+  color:var(--papier);margin-bottom:2px;
 }
 
-/* SECTION SHARED */
-section{padding:88px 0}
-.section-eyebrow{
-  font-size:0.78rem;font-weight:600;letter-spacing:0.2em;
-  text-transform:uppercase;color:var(--sage);margin-bottom:16px;
-}
-.section-title{
-  font-family:'Spectral',serif;font-weight:600;
-  font-size:clamp(2rem,4vw,2.9rem);line-height:1.1;
-  letter-spacing:-.015em;max-width:20ch;margin-bottom:20px;
-}
-.section-intro{font-size:1.05rem;color:var(--muted-mid);max-width:52ch;line-height:1.7}
+/* ── Secties ─────────────────────────── */
+section{padding:96px 0}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head .eyebrow{display:block;margin-bottom:14px}
+.sec-head h2{font-size:clamp(27px,3.4vw,38px);color:var(--charcoal)}
+.sec-head p{margin-top:16px;color:var(--inkt-zacht)}
 
-/* HOW — the loop */
-.loop{background:var(--sage);color:var(--paper);border-radius:16px;
-  padding:64px 56px;margin-top:54px;position:relative;overflow:hidden}
-.loop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative;z-index:2}
-.loop-step{position:relative}
-.loop-step .n{
-  font-family:'Hanken Grotesk',sans-serif;font-size:0.78rem;
-  color:var(--clay);font-weight:600;margin-bottom:18px;display:block;
-  letter-spacing:.18em;text-transform:uppercase;
+/* Missie */
+.missie{background:var(--wit);border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
+.missie-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+@media(max-width:860px){.missie-grid{grid-template-columns:1fr;gap:40px}}
+.statuut{
+  border-left:3px solid var(--terra);
+  padding:6px 0 6px 28px;
 }
-.loop-step h3{
-  font-family:'Spectral',serif;font-weight:600;font-size:1.4rem;
-  margin-bottom:12px;letter-spacing:-.01em;
+.statuut p{
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:20px;line-height:1.62;color:var(--charcoal);
 }
-.loop-step p{color:rgba(239,235,224,0.75);font-size:0.98rem;line-height:1.65}
-.loop-arc{
-  position:absolute;right:-80px;top:-80px;width:300px;height:300px;
-  border:1.5px solid rgba(192,112,58,0.25);border-radius:50%;
+.statuut cite{
+  display:block;margin-top:18px;font-family:'Public Sans',sans-serif;
+  font-style:normal;font-size:13px;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--inkt-zacht);
 }
-.loop-arc2{
-  position:absolute;right:-40px;top:-40px;width:220px;height:220px;
-  border:1px solid rgba(192,112,58,0.15);border-radius:50%;
-}
-@media(max-width:720px){
-  .loop{padding:44px 30px}
-  .loop-grid{grid-template-columns:1fr;gap:34px}
-}
+.missie-tekst p + p{margin-top:18px}
+.missie-tekst p{color:var(--inkt-zacht)}
+.missie-tekst p:first-child{color:var(--inkt)}
 
-/* PILLARS */
-.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:54px}
-.pillar{
-  background:var(--paper-card);border:1px solid var(--warm-line);
-  border-radius:12px;padding:36px 34px;transition:transform .2s,box-shadow .2s;
+/* Programma's */
+.prog-list{display:flex;flex-direction:column}
+.prog{
+  display:grid;grid-template-columns:200px 1fr;gap:48px;
+  padding:52px 0;border-top:1px solid var(--lijn);
 }
-.pillar:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(32,37,31,0.18)}
-.pillar-icon{
-  width:46px;height:46px;border-radius:10px;background:var(--sage-soft);
-  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+.prog:last-child{border-bottom:1px solid var(--lijn)}
+@media(max-width:860px){.prog{grid-template-columns:1fr;gap:16px;padding:40px 0}}
+.prog-label{font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--inkt-zacht);padding-top:6px}
+.prog-label .status{
+  display:inline-block;margin-top:10px;font-size:11.5px;letter-spacing:0.08em;
+  padding:4px 10px;border:1px solid var(--groen);border-radius:2px;color:var(--groen);
 }
-.pillar-icon svg{width:23px;height:23px;stroke:var(--sage);fill:none;stroke-width:1.8}
-.pillar h3{font-family:'Spectral',serif;font-weight:600;font-size:1.25rem;margin-bottom:10px;color:var(--ink)}
-.pillar p{color:var(--muted-mid);font-size:0.95rem;line-height:1.65}
-@media(max-width:680px){.pillars{grid-template-columns:1fr}}
-
-/* MISSION QUOTE */
-.mission{background:var(--sage);border-radius:16px;padding:72px 56px;text-align:center;margin-top:10px}
-.mission blockquote{
-  font-family:'Spectral',serif;font-weight:500;font-style:italic;
-  font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.35;
-  letter-spacing:-.01em;max-width:26ch;margin:0 auto 24px;color:var(--paper);
+.prog-label .status.prep{border-color:var(--lijn);color:var(--inkt-zacht)}
+.prog h3{font-size:25px;color:var(--charcoal);margin-bottom:14px}
+.prog h3 span{color:var(--inkt-zacht);font-weight:400}
+.prog-body p{color:var(--inkt-zacht);max-width:62ch}
+.prog-cijfers{
+  display:flex;gap:52px;flex-wrap:wrap;margin-top:30px;
 }
-.mission cite{font-style:normal;font-size:0.88rem;color:rgba(239,235,224,0.65);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-@media(max-width:720px){.mission{padding:48px 28px}}
-
-/* FUTURE / roadmap */
-.roadmap{margin-top:54px;border-top:1px solid var(--warm-line)}
-.road-item{
-  display:grid;grid-template-columns:130px 1fr;gap:32px;
-  padding:30px 0;border-bottom:1px solid var(--warm-line);align-items:baseline;
-}
-.road-phase{font-family:'Spectral',serif;font-weight:600;color:var(--clay);font-size:1.05rem}
-.road-body h3{font-size:1.1rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
-.road-body p{color:var(--muted-mid);font-size:0.95rem;max-width:54ch;line-height:1.65}
-@media(max-width:680px){
-  .road-item{grid-template-columns:1fr;gap:8px}
+.prog-cijfers div{font-size:13.5px;color:var(--inkt-zacht)}
+.prog-cijfers strong{
+  display:block;font-family:'Source Serif 4',serif;font-weight:600;
+  font-size:30px;color:var(--terra);line-height:1.1;margin-bottom:4px;
 }
 
-/* CTA */
-.final{text-align:center;padding:96px 0 40px}
-.final h2{
-  font-family:'Spectral',serif;font-weight:600;
-  font-size:clamp(2.1rem,4.5vw,3.2rem);line-height:1.1;
-  letter-spacing:-.015em;max-width:18ch;margin:0 auto 24px;
+/* Werkwijze / governance */
+.gov{background:var(--wit);border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
+.gov-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--lijn);border:1px solid var(--lijn)}
+@media(max-width:720px){.gov-grid{grid-template-columns:1fr}}
+.gov-cell{background:var(--wit);padding:36px 34px}
+.gov-cell h3{font-size:18.5px;color:var(--charcoal);margin-bottom:12px}
+.gov-cell h3::before{
+  content:"";display:block;width:26px;height:3px;background:var(--terra);
+  margin-bottom:14px;border-radius:2px;
 }
-.final p{font-size:1.1rem;color:var(--muted-mid);max-width:44ch;margin:0 auto 36px;line-height:1.65}
+.gov-cell p{font-size:15.5px;color:var(--inkt-zacht)}
 
-/* FOOTER */
-footer{background:var(--sage-dark);padding:52px 0 64px;margin-top:40px}
-.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:30px}
-.foot-brand{max-width:32ch}
-.foot-brand .logo-text .logo-sup{color:var(--clay)}
-.foot-brand .logo-text .logo-name{color:var(--paper)}
-.foot-brand p{color:rgba(239,235,224,0.6);font-size:0.9rem;margin-top:16px;line-height:1.65}
-.foot-meta{font-size:0.88rem;color:rgba(239,235,224,0.55);text-align:right;line-height:1.8}
-.foot-meta a{color:rgba(239,235,224,0.85);text-decoration:none}
-.foot-meta a:hover{color:var(--paper)}
-@media(max-width:600px){.foot-grid{flex-direction:column}.foot-meta{text-align:left}}
+/* Fotoband */
+.beeldband{
+  position:relative;padding:130px 0;
+  background:url('images/groei.jpg') center 58%/cover no-repeat;
+}
+.beeldband::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(43,40,37,0.62),rgba(43,40,37,0.62));
+}
+.beeldband .wrap{position:relative;z-index:1;text-align:center}
+.beeldband .eyebrow{color:var(--terra-licht);display:block;margin-bottom:18px}
+.beeldband p{
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(24px,3.4vw,34px);line-height:1.4;
+  color:var(--papier);max-width:26ch;margin:0 auto;
+}
+
+/* Naam */
+.naam{
+  padding:110px 0;position:relative;
+  background:url('images/zonsopkomst.jpg') center 62%/cover no-repeat;
+}
+.naam::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(247,242,233,0.9),rgba(247,242,233,0.86));
+}
+.naam .wrap{position:relative;z-index:1}
+.naam-inner{
+  max-width:620px;margin:0 auto;text-align:center;
+}
+.naam-inner .logo-mark{margin:0 auto 30px}
+.naam-inner h2{font-size:26px;color:var(--charcoal);margin-bottom:16px}
+.naam-inner p{color:var(--inkt-zacht)}
+
+/* Verantwoordingsregister — kernelement */
+.register{background:var(--charcoal);color:var(--papier)}
+.register .eyebrow{color:var(--terra-licht)}
+.register .sec-head h2{color:var(--papier)}
+.register .sec-head p{color:rgba(247,242,233,0.68)}
+.register-table{
+  border:1px solid var(--lijn-donker);
+  background:var(--charcoal-diep);
+}
+.register-row{
+  display:grid;grid-template-columns:280px 1fr;
+  border-bottom:1px solid var(--lijn-donker);
+}
+.register-row:last-child{border-bottom:none}
+@media(max-width:720px){.register-row{grid-template-columns:1fr}}
+.register-row dt{
+  padding:20px 28px;font-size:13px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:rgba(247,242,233,0.5);
+  border-right:1px solid var(--lijn-donker);
+}
+@media(max-width:720px){.register-row dt{border-right:none;padding-bottom:4px}}
+.register-row dd{
+  padding:20px 28px;font-size:15.5px;color:rgba(247,242,233,0.92);
+}
+@media(max-width:720px){.register-row dd{padding-top:0}}
+.register-row dd em{font-style:normal;color:rgba(247,242,233,0.45)}
+.register-note{
+  margin-top:24px;font-size:13.5px;color:rgba(247,242,233,0.5);max-width:66ch;
+}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+.contact h2{font-size:clamp(26px,3.2vw,36px);color:var(--charcoal);margin-bottom:18px}
+.contact p{color:var(--inkt-zacht);max-width:48ch}
+.contact-blok{border:1px solid var(--lijn);background:var(--wit);padding:36px}
+.contact-blok dl div{display:flex;flex-direction:column;gap:2px;padding:14px 0;border-bottom:1px solid var(--lijn)}
+.contact-blok dl div:last-child{border-bottom:none}
+.contact-blok dt{font-size:12.5px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--inkt-zacht)}
+.contact-blok dd{font-size:16px}
+.contact-blok a{color:var(--charcoal);text-decoration-color:var(--terra);text-underline-offset:3px}
+
+/* Footer */
+footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13.5px;color:var(--inkt-zacht)}
+.footer-lockup{display:flex;align-items:center;gap:10px}
+
+/* Fade-in bij laden — subtiel, eenmalig */
+.fade{opacity:0;transform:translateY(10px);animation:fadeUp .7s ease forwards}
+.fade.d1{animation-delay:.08s}.fade.d2{animation-delay:.16s}.fade.d3{animation-delay:.24s}
+@keyframes fadeUp{to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="logo">
-    <svg class="logo-mark" width="38" height="38" viewBox="-50 -50 100 100" aria-hidden="true">
-      <circle cx="-13" cy="0" r="22" fill="none" stroke="#234E3F" stroke-width="8.5"/>
-      <circle cx="13" cy="0" r="22" fill="none" stroke="#C0703A" stroke-width="8.5"/>
-      <path d="M -7.0 -21.0 A 22 22 0 0 1 5.4 -11.6" fill="none" stroke="#234E3F" stroke-width="8.5" stroke-linecap="round"/>
-    </svg>
-    <div class="logo-text">
-      <span class="logo-sup">Stichting</span>
-      <span class="logo-name">Vakgenoten</span>
-    </div>
-  </a>
-  <div class="nav-links">
-    <a href="#hoe">Hoe het werkt</a>
-    <a href="#missie">Missie</a>
-    <a href="#toekomst">Toekomst</a>
-    <a href="#contact" class="nav-cta">Contact</a>
-  </div>
-</nav>
-
-<header class="hero-band">
- <div class="hero wrap">
-  <span class="eyebrow">Vaktalent ontmoet de buurt</span>
-  <h1>Waar leerlingen <em>oefenen</em> en buurtgenoten <em>opbloeien</em>.</h1>
-  <p class="hero-lede">Vakgenoten verbindt studenten die praktijkuren nodig hebben met mensen die een verzorgende dienst zoeken — gratis, dichtbij en met aandacht voor elkaar.</p>
-  <div class="hero-actions">
-    <a href="#hoe" class="btn-primary">Ontdek hoe het werkt</a>
-    <a href="#missie" class="btn-ghost">Onze missie
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+<header>
+  <div class="wrap header-inner">
+    <a class="lockup" href="#top" aria-label="Stichting Alemaya — naar boven">
+      <svg class="logo-mark" width="34" height="34" viewBox="0 0 100 100" role="img" aria-hidden="true">
+        <path d="M50 14 L20 88 M50 14 L80 88" stroke="#2B2825" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
+      </svg>
+      <span class="lockup-tekst">
+        <span class="lockup-naam">alemaya</span>
+        <span class="lockup-sub">Stichting</span>
+      </span>
     </a>
+    <nav aria-label="Hoofdnavigatie">
+      <a href="#programmas">Programma's</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#verantwoording">Verantwoording</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-num">7 jaar</div>
-      <div class="stat-label">een bloeiende community</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">10.000+</div>
-      <div class="stat-label">mensen verbonden</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">Gratis</div>
-      <div class="stat-label">voor iedereen, altijd</div>
-    </div>
-  </div>
- </div>
 </header>
 
-<section id="hoe" class="wrap">
-  <div class="section-eyebrow">Hoe het werkt</div>
-  <h2 class="section-title">Eén ontmoeting, twee mensen verder.</h2>
-  <p class="section-intro">Een student heeft oefenuren nodig. Een buurtgenoot wil graag verzorgd worden maar let op de kosten. Vakgenoten brengt ze samen — en daar wordt iedereen beter van.</p>
+<main id="top">
 
-  <div class="loop">
-    <div class="loop-arc"></div>
-    <div class="loop-arc2"></div>
-    <div class="loop-grid">
-      <div class="loop-step">
-        <span class="n">Stap één</span>
-        <h3>De student meldt zich</h3>
-        <p>Leerlingen van kappers- en beautyopleidingen plaatsen een oproep wanneer ze een model zoeken voor hun praktijkexamen of oefenuren.</p>
-      </div>
-      <div class="loop-step">
-        <span class="n">Stap twee</span>
-        <h3>De buurt reageert</h3>
-        <p>Buurtgenoten die een knipbeurt of behandeling zoeken melden zich aan. Geen kosten, geen drempel — gewoon een afspraak in de buurt.</p>
-      </div>
-      <div class="loop-step">
-        <span class="n">Stap drie</span>
-        <h3>Iedereen groeit</h3>
-        <p>De student bouwt ervaring op, de buurtgenoot voelt zich verzorgd, en de wijk wordt een stukje hechter. Zo simpel is het.</p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow fade">Stichting zonder winstoogmerk · Amsterdam</span>
+      <h1 class="fade d1">Blijvende infrastructuur voor gemeenschappen die elkaar versterken.</h1>
+      <p class="fade d2">Stichting Alemaya ontwikkelt en beheert digitale en fysieke communityplatforms die sociale cohesie, vakmanschap en gelijke kansen bevorderen — met een onbezoldigd bestuur en professionele uitvoering.</p>
+      <div class="hero-meta fade d3">
+        <div><strong>Vakgenoten</strong>handelsnaam voor programma's</div>
+        <div><strong>Kappersmodellen.nl</strong>zeven jaar bewezen platform</div>
+        <div><strong>Gemeente Amsterdam</strong>statutaire zetel</div>
       </div>
     </div>
   </div>
-</section>
 
-<section id="missie" class="wrap" style="padding-top:30px">
-  <div class="mission">
-    <blockquote>"Goede zorg voor je uiterlijk zou nooit een kwestie van geld mogen zijn."</blockquote>
-    <cite>— Het uitgangspunt van Stichting Vakgenoten</cite>
-  </div>
-</section>
+  <!-- MISSIE -->
+  <section class="missie" id="missie">
+    <div class="wrap missie-grid">
+      <div class="statuut">
+        <p>De stichting heeft ten doel het bevorderen van sociale cohesie, gelijke kansen, bestaanszekerheid, maatschappelijke participatie, vakmanschap, opleiding, innovatie, duurzaamheid en zelfredzaamheid, alsmede het tegengaan van sociale uitsluiting.</p>
+        <cite>Statutaire doelstelling · artikel 2.1</cite>
+      </div>
+      <div class="missie-tekst">
+        <p>Sterke gemeenschappen ontstaan niet vanzelf. Ze hebben plekken nodig — digitaal en fysiek — waar mensen elkaar vinden, van elkaar leren en elkaar verder helpen.</p>
+        <p>Stichting Alemaya bouwt en onderhoudt die plekken. Niet als eenmalig project, maar als infrastructuur die blijft: platforms die jaar na jaar studenten, vakmensen, bewoners en buurtorganisaties met elkaar verbinden.</p>
+        <p>De stichting beoogt geen winst. Middelen komen volledig ten goede aan de doelstelling.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="wrap" style="padding-top:30px">
-  <div class="section-eyebrow">Waar wij voor staan</div>
-  <h2 class="section-title">Meer dan een knipbeurt.</h2>
+  <!-- PROGRAMMA'S -->
+  <section id="programmas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Programma's</span>
+        <h2>Bewezen platforms, publiek toegankelijk</h2>
+        <p>Elk programma van de stichting is kosteloos voor de deelnemers en wordt uitgevoerd onder de handelsnaam Vakgenoten.</p>
+      </div>
+      <div class="prog-list">
+        <article class="prog">
+          <div class="prog-label">Programma 01<span class="status">Actief</span></div>
+          <div class="prog-body">
+            <h3>Kappersmodellen.nl <span>· Vakgenoten</span></h3>
+            <p>Al zeven jaar verbindt Kappersmodellen.nl kappers in opleiding met oefenmodellen uit de buurt. Studenten doen praktijkervaring op, modellen krijgen kosteloos een knip- of kleurbehandeling, en kapsalons en opleiders vinden nieuw talent. Het platform draait op een actieve gemeenschap die elkaar dagelijks weet te vinden.</p>
+            <div class="prog-cijfers">
+              <div><strong>7 jaar</strong>onafgebroken actief</div>
+              <div><strong>35.000</strong>leden in de community</div>
+              <div><strong>±7.000</strong>matches per jaar</div>
+            </div>
+          </div>
+        </article>
+        <article class="prog">
+          <div class="prog-label">Programma 02<span class="status prep">In voorbereiding</span></div>
+          <div class="prog-body">
+            <h3>De Warme Was</h3>
+            <p>Gratis wasbeurten voor Amsterdammers in een kwetsbare positie, in samenwerking met wasserettes in de buurt. Een laagdrempelige voorziening die bestaanszekerheid en waardigheid ondersteunt, en tegelijk lokale ondernemers betrekt bij de sociale basis van hun wijk.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <div class="pillars">
-    <div class="pillar">
-      <div class="pillar-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>
-      </div>
-      <h3>Toegankelijk voor iedereen</h3>
-      <p>Voor wie de gang naar de kapper te duur is geworden — ouderen, mensen met een krappe beurs, nieuwkomers. Bij ons is iedereen welkom.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 14c3 0 5-2 5-5s-2-5-5-5-5 2-5 5 2 5 5 5Z"/><path d="M5 21c0-3 3-5 7-5s7 2 7 5" stroke-linecap="round"/></svg>
-      </div>
-      <h3>Kansen voor jong talent</h3>
-      <p>Studenten hebben oefenuren nodig om hun vak te leren. Wij geven ze een veilige, echte plek om te groeien en zelfvertrouwen op te bouwen.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10" stroke-linecap="round"/><path d="M10 20v-6h4v6"/></svg>
-      </div>
-      <h3>Sterker in de buurt</h3>
-      <p>Elke ontmoeting versterkt het weefsel van de wijk. Buurtgenoten leren elkaar kennen, en de stad wordt een beetje warmer.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h3>Vertrouwd en veilig</h3>
-      <p>Afspraken verlopen via begeleide opleidingen en een community die al jaren bestaat. Zorgvuldigheid en vertrouwen staan voorop.</p>
-    </div>
-  </div>
-</section>
-
-<section id="toekomst" class="wrap" style="padding-top:120px">
-  <div class="section-eyebrow">Waar we naartoe groeien</div>
-  <h2 class="section-title">Van buurtinitiatief tot landelijk netwerk.</h2>
-  <p class="section-intro">Wat begon met kappers groeit uit naar alle verzorgende vakken — en naar steden door heel Nederland en daarbuiten.</p>
-
-  <div class="roadmap">
-    <div class="road-item">
-      <div class="road-phase">Vandaag</div>
-      <div class="road-body">
-        <h3>Stevige wortels in Amsterdam</h3>
-        <p>Een actieve community per stadsdeel, een eigen platform en samenwerkingen met buurtteams en opleidingen. Het fundament staat.</p>
-      </div>
-    </div>
-    <div class="road-item">
-      <div class="road-phase">Volgend</div>
-      <div class="road-body">
-        <h3>Breder dan haar alleen</h3>
-        <p>Nagelstyling, schoonheidsverzorging, visagie — overal waar studenten oefenuren nodig hebben en buurtgenoten een dienst zoeken, brengen wij ze samen.</p>
-      </div>
-    </div>
-    <div class="road-item">
-      <div class="road-phase">Verder</div>
-      <div class="road-body">
-        <h3>Door heel Nederland</h3>
-        <p>Stad voor stad bouwen we lokale gemeenschappen op, met lokale opleidingen en buurtpartners als verankering.</p>
-      </div>
-    </div>
-    <div class="road-item">
-      <div class="road-phase">De horizon</div>
-      <div class="road-body">
-        <h3>Over de grens</h3>
-        <p>Het model is universeel. Met partners in België en daarbuiten brengen we vaktalent en gemeenschap ook internationaal samen.</p>
-      </div>
+  <!-- FOTOBAND -->
+  <div class="beeldband" role="img" aria-label="Jonge kiemplant die opkomt uit de grond">
+    <div class="wrap">
+      <span class="eyebrow">Onze overtuiging</span>
+      <p>Wij investeren in wat blijft: mensen die elkaar verder helpen.</p>
     </div>
   </div>
-</section>
 
-<section id="contact" class="wrap">
-  <div class="final">
-    <h2>Bouw mee aan een warmere buurt.</h2>
-    <p>Ben je een opleiding, buurtorganisatie of fonds? We werken graag samen aan toegankelijke zorg voor iedereen.</p>
-    <a href="mailto:hello@stichtingvakgenoten.nl" class="btn-primary">Neem contact op</a>
-  </div>
-</section>
+  <!-- WERKWIJZE / GOVERNANCE -->
+  <section class="gov" id="werkwijze">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Werkwijze</span>
+        <h2>Besturen en uitvoeren, zorgvuldig gescheiden</h2>
+        <p>De stichting is ingericht op continuïteit en verantwoording — vanaf de eerste dag.</p>
+      </div>
+      <div class="gov-grid">
+        <div class="gov-cell">
+          <h3>Onbezoldigd bestuur</h3>
+          <p>Bestuurders ontvangen geen beloning voor hun werkzaamheden; uitsluitend gemaakte onkosten worden vergoed. Zo komen middelen maximaal ten goede aan de programma's.</p>
+        </div>
+        <div class="gov-cell">
+          <h3>Professionele uitvoering</h3>
+          <p>De ontwikkeling en het beheer van de platforms zijn belegd bij professionele uitvoerende partners, tegen marktconforme voorwaarden en op basis van heldere afspraken.</p>
+        </div>
+        <div class="gov-cell">
+          <h3>Zorgvuldige besluitvorming</h3>
+          <p>Bij een mogelijk tegenstrijdig belang wordt dit vastgelegd en onthoudt het betrokken bestuurslid zich van besluitvorming. Afspraken met verbonden partijen worden transparant gedocumenteerd.</p>
+        </div>
+        <div class="gov-cell">
+          <h3>Jaarlijkse verantwoording</h3>
+          <p>De stichting stelt jaarlijks een balans en staat van baten en lasten op. Subsidies worden per programma en per gebied afzonderlijk geadministreerd en verantwoord.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAAM -->
+  <section class="naam">
+    <div class="wrap naam-inner">
+      <svg class="logo-mark" width="64" height="64" viewBox="0 0 100 100" role="img" aria-label="Beeldmerk Stichting Alemaya: een A met opgaande zon">
+        <path d="M50 14 L20 88 M50 14 L80 88" stroke="#2B2825" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
+      </svg>
+      <h2>Waarom Alemaya</h2>
+      <p>De naam Alemaya komt uit de familiegeschiedenis van de oprichter en staat voor de overtuiging dat gemeenschap iets is dat je opbouwt om door te geven. De opgaande zon in ons beeldmerk verwijst naar die oorsprong — en naar nieuwe kansen. De stichting is opgezet als blijvend vehikel: één stevige basis waaronder meerdere maatschappelijke programma's kunnen groeien.</p>
+    </div>
+  </section>
+
+  <!-- VERANTWOORDINGSREGISTER -->
+  <section class="register" id="verantwoording">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Verantwoording</span>
+        <h2>Kerngegevens van de stichting</h2>
+        <p>Transparantie begint bij vindbare feiten. Hieronder de formele gegevens zoals vastgelegd in de statuten en het Handelsregister.</p>
+      </div>
+      <dl class="register-table">
+        <div class="register-row"><dt>Statutaire naam</dt><dd>Stichting Alemaya</dd></div>
+        <div class="register-row"><dt>Handelsnaam</dt><dd>Vakgenoten</dd></div>
+        <div class="register-row"><dt>Rechtsvorm</dt><dd>Stichting</dd></div>
+        <div class="register-row"><dt>Statutaire zetel</dt><dd>Gemeente Amsterdam</dd></div>
+        <div class="register-row"><dt>KvK-nummer</dt><dd><em>Volgt na inschrijving in het Handelsregister</em></dd></div>
+        <div class="register-row"><dt>RSIN</dt><dd><em>Volgt na inschrijving in het Handelsregister</em></dd></div>
+        <div class="register-row"><dt>Bestuur</dt><dd>G.S. Ezra (voorzitter, penningmeester) · P. Polderman (secretaris)</dd></div>
+        <div class="register-row"><dt>Beloningsbeleid</dt><dd>Bestuurders ontvangen geen beloning; uitsluitend vergoeding van gemaakte onkosten</dd></div>
+        <div class="register-row"><dt>Boekjaar</dt><dd>Kalenderjaar · eerste boekjaar eindigt 31 december 2026</dd></div>
+        <div class="register-row"><dt>Jaarverslag</dt><dd>Eerste jaarrekening beschikbaar in de eerste helft van 2027</dd></div>
+      </dl>
+      <p class="register-note">Beleidsplan en jaarstukken worden na vaststelling op deze pagina gepubliceerd. Voor vragen over governance of verantwoording kunt u rechtstreeks contact opnemen met het bestuur.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:14px">Contact</span>
+        <h2>In gesprek over samenwerking</h2>
+        <p>Bent u fonds, gemeente of maatschappelijke organisatie en wilt u meer weten over onze programma's, begroting of werkwijze? Wij lichten onze plannen graag persoonlijk toe.</p>
+      </div>
+      <div class="contact-blok">
+        <dl>
+          <div><dt>E-mail</dt><dd><a href="mailto:hello@stichtingvakgenoten.nl">hello@stichtingvakgenoten.nl</a></dd></div>
+          <div><dt>Telefoon</dt><dd><a href="tel:+31649360741">06 49 36 07 41</a></dd></div>
+          <div><dt>Bezoekadres</dt><dd>Ruysdaelkade 23-1, 1072 AH Amsterdam</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  <div class="wrap foot-grid">
-    <div class="foot-brand">
-      <a href="#" class="logo">
-        <svg class="logo-mark" width="36" height="36" viewBox="-50 -50 100 100" aria-hidden="true">
-          <circle cx="-13" cy="0" r="22" fill="none" stroke="#F4F1E9" stroke-width="8.5"/>
-          <circle cx="13" cy="0" r="22" fill="none" stroke="#C0703A" stroke-width="8.5"/>
-          <path d="M -7.0 -21.0 A 22 22 0 0 1 5.4 -11.6" fill="none" stroke="#F4F1E9" stroke-width="8.5" stroke-linecap="round"/>
-        </svg>
-        <div class="logo-text">
-          <span class="logo-sup">Stichting</span>
-          <span class="logo-name">Vakgenoten</span>
-        </div>
-      </a>
-      <p>Vaktalent ontmoet de buurt. Een stichting zonder winstoogmerk die studenten en buurtgenoten gratis met elkaar verbindt.</p>
+  <div class="wrap footer-inner">
+    <div class="footer-lockup">
+      <svg class="logo-mark" width="22" height="22" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M50 14 L20 88 M50 14 L80 88" stroke="#5C554C" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
+      </svg>
+      <span>© 2026 Stichting Alemaya · Amsterdam</span>
     </div>
-    <div class="foot-meta">
-      <a href="mailto:hello@stichtingvakgenoten.nl">hello@stichtingvakgenoten.nl</a><br>
-      Amsterdam<br>
-      <span style="opacity:0.6">KvK · in oprichting</span>
-    </div>
+    <div>Handelsnaam: Vakgenoten</div>
   </div>
 </footer>
 
