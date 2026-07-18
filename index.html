@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stichting Alemaya — Communityplatforms voor vakmanschap en kansen</title>
-<meta name="description" content="Stichting Alemaya ontwikkelt maatschappelijke programma's rond ontmoeting, vakmanschap en praktische kansen. Te beginnen met Vakgenoten en Kappersmodellen.nl: een bestaande community van 35.000 mensen en duizenden oproepen en matches per jaar.">
+<title>Stichting Alemaya — Vakmanschap &amp; verbinding</title>
+<meta name="description" content="Alemaya brengt mensen samen rond vakmanschap, talent en praktische kansen. Iedereen heeft iets te leren en iedereen heeft iets door te geven.">
+<link rel="canonical" href="https://alemaya.nl/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stichting Alemaya">
+<meta property="og:title" content="Stichting Alemaya — Vakmanschap &amp; verbinding">
+<meta property="og:description" content="Alemaya brengt mensen samen rond vakmanschap, talent en praktische kansen. Iedereen heeft iets te leren en iedereen heeft iets door te geven.">
+<meta property="og:url" content="https://alemaya.nl/">
+<meta property="og:image" content="https://alemaya.nl/images/fietsers.jpg">
+<meta property="og:locale" content="nl_NL">
 <script>
   if (/\.pages\.dev$/.test(location.hostname)) {
     document.write('<meta name="robots" content="noindex, nofollow">');
@@ -13,7 +21,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 14 L20 88 M50 14 L80 88' stroke='%232B2825' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M37 76 A 13 13 0 0 1 63 76 Z' fill='%23C05A2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --charcoal:#2B2825;
@@ -44,7 +52,7 @@ body{
 }
 ::selection{background:var(--terra);color:var(--wit)}
 a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
 .eyebrow{
   font-size:12.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
@@ -57,13 +65,13 @@ h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;font-weight:500;line-height:
 .lockup{
   display:flex;align-items:center;gap:13px;text-decoration:none;
 }
-.lockup-tekst{display:flex;flex-direction:column;gap:1px}
+.lockup-tekst{display:flex;flex-direction:column;gap:2px}
 .lockup-naam{
   font-family:'Public Sans',sans-serif;font-size:17px;font-weight:600;
   letter-spacing:0.22em;color:var(--charcoal);line-height:1;
 }
 .lockup-sub{
-  font-size:9.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;
+  font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--terra);line-height:1;
 }
 
@@ -77,13 +85,40 @@ header{
   display:flex;align-items:center;justify-content:space-between;
   padding:16px 0;
 }
-nav{display:flex;gap:32px}
-nav a{
-  text-decoration:none;font-size:14.5px;font-weight:500;color:var(--inkt-zacht);
+.nav-desktop{display:flex;gap:26px}
+.nav-desktop a{
+  text-decoration:none;font-size:14px;font-weight:500;color:var(--inkt-zacht);
   transition:color .15s;
 }
-nav a:hover{color:var(--terra)}
-@media(max-width:720px){nav{display:none}}
+.nav-desktop a:hover{color:var(--terra)}
+
+/* Mobiel menu — zonder JavaScript, via details/summary */
+.menu-mobiel{display:none;position:relative}
+.menu-mobiel summary{
+  list-style:none;display:inline-flex;align-items:center;gap:10px;
+  font-size:14px;font-weight:600;color:var(--inkt-zacht);
+  cursor:pointer;padding:8px 4px;
+}
+.menu-mobiel summary::-webkit-details-marker{display:none}
+.menu-lijnen{
+  display:inline-block;width:16px;height:2px;background:currentColor;
+  box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;
+}
+.menu-mobiel nav{
+  position:absolute;right:0;top:calc(100% + 12px);
+  background:var(--wit);border:1px solid var(--lijn);
+  min-width:236px;padding:8px 0;z-index:60;
+  box-shadow:0 16px 34px -20px rgba(43,40,37,0.3);
+}
+.menu-mobiel nav a{
+  display:block;text-decoration:none;font-size:15px;font-weight:500;
+  color:var(--inkt);padding:11px 24px;
+}
+.menu-mobiel nav a:hover{color:var(--terra);background:var(--papier)}
+@media(max-width:880px){
+  .nav-desktop{display:none}
+  .menu-mobiel{display:block}
+}
 
 /* ── Hero ─────────────────────────── */
 .hero{
@@ -107,15 +142,26 @@ nav a:hover{color:var(--terra)}
 .hero .wrap{position:relative;z-index:1}
 .hero .eyebrow{color:var(--terra-licht);margin-bottom:26px;display:block}
 .hero h1{
-  font-size:clamp(33px,4.8vw,54px);
-  max-width:18ch;
+  font-size:clamp(31px,4.6vw,50px);
+  max-width:21ch;
   color:var(--papier);
-  margin-bottom:28px;
+  margin-bottom:26px;
 }
-.hero p{
-  max-width:58ch;font-size:18.5px;line-height:1.7;
+.hero h1 em{font-style:italic;color:var(--terra-licht)}
+.hero .lede{
+  max-width:56ch;font-size:18.5px;line-height:1.7;
   color:rgba(247,242,233,0.85);
 }
+.knop-rij{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.knop{
+  display:inline-block;text-decoration:none;font-size:15px;font-weight:600;
+  padding:13px 26px;border-radius:2px;letter-spacing:0.01em;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.knop-primair{background:var(--terra);color:var(--wit);border:1px solid var(--terra)}
+.knop-primair:hover{background:var(--terra-licht);border-color:var(--terra-licht)}
+.knop-contour{border:1px solid rgba(247,242,233,0.55);color:var(--papier)}
+.knop-contour:hover{border-color:var(--papier);background:rgba(247,242,233,0.08)}
 
 /* Bewijsblokken in de hero */
 .hero-cijfers{
@@ -151,18 +197,101 @@ section{padding:96px 0}
 }
 .statuut p{
   font-family:'Source Serif 4',Georgia,serif;
-  font-size:20px;line-height:1.62;color:var(--charcoal);
+  font-size:18.5px;line-height:1.62;color:var(--charcoal);
 }
 .statuut cite{
   display:block;margin-top:18px;font-family:'Public Sans',sans-serif;
   font-style:normal;font-size:13px;font-weight:600;letter-spacing:0.1em;
   text-transform:uppercase;color:var(--inkt-zacht);
 }
+.statuut .duiding{
+  font-family:'Public Sans',sans-serif;font-size:14px;color:var(--inkt-zacht);
+  margin-top:16px;line-height:1.6;
+}
 .missie-tekst p + p{margin-top:18px}
 .missie-tekst p{color:var(--inkt-zacht)}
-.missie-tekst p:first-child{color:var(--inkt)}
+.missie-tekst p:first-child{
+  color:var(--inkt);font-family:'Source Serif 4',Georgia,serif;font-size:20px;line-height:1.55;
+}
 
-/* Programma's */
+/* Alemaya-model: vier stappen aan één draad */
+.model-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0 34px;margin-top:8px;
+}
+@media(max-width:880px){.model-grid{grid-template-columns:repeat(2,1fr);gap:36px 34px}}
+@media(max-width:540px){.model-grid{grid-template-columns:1fr;gap:34px}}
+.stap{border-top:1px solid var(--lijn);padding-top:24px;position:relative}
+.stap::before{
+  content:"";position:absolute;top:-1px;left:0;
+  width:34px;height:3px;background:var(--terra);border-radius:2px;
+}
+.stap-nr{
+  font-family:'Source Serif 4',serif;font-weight:600;font-size:15px;
+  color:var(--terra);letter-spacing:0.08em;display:block;margin-bottom:10px;
+}
+.stap h3{font-size:19.5px;color:var(--charcoal);margin-bottom:10px}
+.stap p{font-size:15px;color:var(--inkt-zacht);max-width:30ch}
+.model-noot{
+  margin-top:44px;font-size:14.5px;color:var(--inkt-zacht);max-width:60ch;
+}
+
+/* Verhalen — De Vakgenoot */
+.verhalen{background:var(--wit);border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
+.vakgenoot-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:start}
+@media(max-width:860px){.vakgenoot-grid{grid-template-columns:1fr;gap:40px}}
+.vakgenoot-tekst p{color:var(--inkt-zacht)}
+.vakgenoot-tekst p + p{margin-top:18px}
+.vakgenoot-slot{
+  margin-top:30px;border-left:3px solid var(--terra);padding:4px 0 4px 24px;
+}
+.vakgenoot-slot p{
+  font-family:'Source Serif 4',Georgia,serif;font-style:italic;
+  font-size:20px;line-height:1.5;color:var(--charcoal);
+}
+.vakgenoot-slot span{
+  display:block;margin-top:10px;font-size:12.5px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--inkt-zacht);
+}
+.concept-kaart{
+  border:1px solid var(--lijn);background:var(--papier);padding:32px 30px;
+}
+.concept-label{
+  display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--inkt-zacht);
+  border:1px solid var(--lijn);border-radius:2px;padding:4px 10px;margin-bottom:20px;
+  background:var(--wit);
+}
+.concept-kaart h3{font-size:18.5px;color:var(--charcoal);margin-bottom:14px}
+.concept-kaart ul{list-style:none;margin-top:4px}
+.concept-kaart li{
+  font-size:15px;color:var(--inkt-zacht);padding:10px 0 10px 26px;
+  border-bottom:1px solid var(--lijn);position:relative;
+}
+.concept-kaart li:last-child{border-bottom:none}
+.concept-kaart li::before{
+  content:"";position:absolute;left:2px;top:19px;
+  width:12px;height:2px;background:var(--terra);
+}
+.concept-kaart .voetnoot{font-size:13.5px;color:var(--inkt-zacht);margin-top:18px}
+
+/* Fotoband */
+.beeldband{
+  position:relative;padding:130px 0;
+  background:url('images/groei.jpg') center 58%/cover no-repeat;
+}
+.beeldband::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(43,40,37,0.62),rgba(43,40,37,0.62));
+}
+.beeldband .wrap{position:relative;z-index:1;text-align:center}
+.beeldband .eyebrow{color:var(--terra-licht);display:block;margin-bottom:18px}
+.beeldband p{
+  font-family:'Source Serif 4',Georgia,serif;
+  font-size:clamp(24px,3.4vw,34px);line-height:1.4;
+  color:var(--papier);max-width:26ch;margin:0 auto;
+}
+
+/* Projecten */
 .prog-list{display:flex;flex-direction:column}
 .prog{
   display:grid;grid-template-columns:200px 1fr;gap:48px;
@@ -191,36 +320,24 @@ section{padding:96px 0}
   margin-top:28px;font-size:14.5px;color:var(--inkt-zacht);max-width:66ch;
 }
 
-/* Werkwijze / governance */
-.gov{background:var(--wit);border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
-.gov-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--lijn);border:1px solid var(--lijn)}
-@media(max-width:720px){.gov-grid{grid-template-columns:1fr}}
-.gov-cell{background:var(--wit);padding:36px 34px}
-.gov-cell h3{font-size:18.5px;color:var(--charcoal);margin-bottom:12px}
-.gov-cell h3::before{
-  content:"";display:block;width:26px;height:3px;background:var(--terra);
-  margin-bottom:14px;border-radius:2px;
+/* Doorgeefgedachte */
+.doorgeef{background:var(--wit);border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
+.geef-lijst{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.geef-lijst span{
+  font-size:14px;font-weight:600;color:var(--charcoal);
+  border:1px solid var(--lijn);background:var(--papier);
+  padding:8px 16px;border-radius:2px;letter-spacing:0.02em;
 }
-.gov-cell p{font-size:15.5px;color:var(--inkt-zacht)}
+.doorgeef-noot{margin-top:26px;font-size:15.5px;color:var(--inkt-zacht);max-width:62ch}
+.dag-blok{
+  margin-top:56px;border:1px solid var(--lijn);background:var(--papier);
+  padding:34px 32px;max-width:720px;
+}
+.dag-blok .concept-label{margin-bottom:16px}
+.dag-blok h3{font-size:20px;color:var(--charcoal);margin-bottom:10px}
+.dag-blok p{font-size:15px;color:var(--inkt-zacht)}
 
-/* Fotoband */
-.beeldband{
-  position:relative;padding:130px 0;
-  background:url('images/groei.jpg') center 58%/cover no-repeat;
-}
-.beeldband::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(rgba(43,40,37,0.62),rgba(43,40,37,0.62));
-}
-.beeldband .wrap{position:relative;z-index:1;text-align:center}
-.beeldband .eyebrow{color:var(--terra-licht);display:block;margin-bottom:18px}
-.beeldband p{
-  font-family:'Source Serif 4',Georgia,serif;
-  font-size:clamp(24px,3.4vw,34px);line-height:1.4;
-  color:var(--papier);max-width:26ch;margin:0 auto;
-}
-
-/* Naam */
+/* Naam / Over Alemaya */
 .naam{
   padding:110px 0;position:relative;
   background:url('images/zonsopkomst.jpg') center 62%/cover no-repeat;
@@ -237,7 +354,19 @@ section{padding:96px 0}
 .naam-inner h2{font-size:26px;color:var(--charcoal);margin-bottom:16px}
 .naam-inner p{color:var(--inkt-zacht)}
 
-/* Verantwoordingsregister — kernelement */
+/* Werkwijze / governance */
+.gov{background:var(--wit);border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
+.gov-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--lijn);border:1px solid var(--lijn)}
+@media(max-width:720px){.gov-grid{grid-template-columns:1fr}}
+.gov-cell{background:var(--wit);padding:36px 34px}
+.gov-cell h3{font-size:18.5px;color:var(--charcoal);margin-bottom:12px}
+.gov-cell h3::before{
+  content:"";display:block;width:26px;height:3px;background:var(--terra);
+  margin-bottom:14px;border-radius:2px;
+}
+.gov-cell p{font-size:15.5px;color:var(--inkt-zacht)}
+
+/* Verantwoordingsregister */
 .register{background:var(--charcoal);color:var(--papier)}
 .register .eyebrow{color:var(--terra-licht)}
 .register .sec-head h2{color:var(--papier)}
@@ -269,7 +398,7 @@ section{padding:96px 0}
 }
 .register-note a{color:rgba(247,242,233,0.8);text-decoration-color:var(--terra-licht);text-underline-offset:3px}
 
-/* Contact */
+/* Samenwerken / contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:40px}}
 .contact h2{font-size:clamp(26px,3.2vw,36px);color:var(--charcoal);margin-bottom:18px}
@@ -287,6 +416,8 @@ section{padding:96px 0}
 footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13.5px;color:var(--inkt-zacht)}
 .footer-lockup{display:flex;align-items:center;gap:10px}
+.footer-inner a{color:var(--inkt-zacht);text-decoration-color:var(--terra);text-underline-offset:3px}
+.footer-inner a:hover{color:var(--terra)}
 
 /* Fade-in bij laden — subtiel, eenmalig */
 .fade{opacity:0;transform:translateY(10px);animation:fadeUp .7s ease forwards}
@@ -298,22 +429,36 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
 
 <header>
   <div class="wrap header-inner">
-    <a class="lockup" href="#top" aria-label="Stichting Alemaya — naar boven">
+    <a class="lockup" href="#top" aria-label="Alemaya — naar boven">
       <svg class="logo-mark" width="34" height="34" viewBox="0 0 100 100" role="img" aria-hidden="true">
         <path d="M50 14 L20 88 M50 14 L80 88" stroke="#2B2825" stroke-width="8" stroke-linecap="round" fill="none"/>
         <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
       </svg>
       <span class="lockup-tekst">
         <span class="lockup-naam">alemaya</span>
-        <span class="lockup-sub">Stichting</span>
+        <span class="lockup-sub">Vakmanschap &amp; verbinding</span>
       </span>
     </a>
-    <nav aria-label="Hoofdnavigatie">
-      <a href="#programmas">Programma's</a>
-      <a href="#werkwijze">Werkwijze</a>
-      <a href="subsidieverleners.html">Voor subsidieverleners</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav-desktop" aria-label="Hoofdnavigatie">
+      <a href="#missie">Onze missie</a>
+      <a href="#hoe-het-werkt">Hoe het werkt</a>
+      <a href="#verhalen">Verhalen</a>
+      <a href="#projecten">Projecten</a>
+      <a href="#over">Over Alemaya</a>
+      <a href="#samenwerken">Samenwerken</a>
     </nav>
+    <details class="menu-mobiel">
+      <summary><span class="menu-lijnen" aria-hidden="true"></span>Menu</summary>
+      <nav aria-label="Mobiel menu">
+        <a href="#missie">Onze missie</a>
+        <a href="#hoe-het-werkt">Hoe het werkt</a>
+        <a href="#verhalen">Verhalen</a>
+        <a href="#projecten">Projecten</a>
+        <a href="#over">Over Alemaya</a>
+        <a href="#samenwerken">Samenwerken</a>
+        <a href="subsidieverleners.html">Voor subsidieverleners</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -322,9 +467,13 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
   <!-- HERO -->
   <div class="hero">
     <div class="wrap">
-      <span class="eyebrow fade">Stichting zonder winstoogmerk · Amsterdam</span>
-      <h1 class="fade d1">Communityplatforms die mensen, vakmanschap en kansen verbinden.</h1>
-      <p class="fade d2">Stichting Alemaya ontwikkelt maatschappelijke programma's rond ontmoeting, vakmanschap en praktische kansen. We bouwen voort op bestaande gemeenschappen, te beginnen met Vakgenoten en Kappersmodellen.nl: een actief platform met 35.000 communityleden en duizenden oproepen en matches per jaar.</p>
+      <span class="eyebrow fade">Stichting Alemaya · Vakmanschap &amp; verbinding</span>
+      <h1 class="fade d1">Iedereen heeft iets te leren. Iedereen heeft iets <em>door te geven</em>.</h1>
+      <p class="lede fade d2">Alemaya brengt mensen samen rond vakmanschap, talent en praktische kansen. We maken zichtbaar wat mensen kunnen, helpen kennis groeien en zorgen dat wat iemand ontvangt, uiteindelijk weer verder kan reizen.</p>
+      <div class="knop-rij fade d2">
+        <a class="knop knop-primair" href="#missie">Ontdek onze missie</a>
+        <a class="knop knop-contour" href="#projecten">Bekijk onze projecten</a>
+      </div>
       <div class="hero-cijfers fade d3">
         <div class="cijfer">
           <strong>7 jaar actief</strong>
@@ -342,45 +491,103 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
     </div>
   </div>
 
-  <!-- MISSIE -->
+  <!-- ONZE MISSIE -->
   <section class="missie" id="missie">
-    <div class="wrap missie-grid">
-      <div class="statuut">
-        <p>De stichting heeft ten doel het bevorderen van sociale cohesie, gelijke kansen, bestaanszekerheid, maatschappelijke participatie, vakmanschap, opleiding, innovatie, duurzaamheid en zelfredzaamheid, alsmede het tegengaan van sociale uitsluiting.</p>
-        <cite>Statutaire doelstelling · artikel 2.1</cite>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Onze missie</span>
+        <h2>Van talent naar betekenis</h2>
       </div>
-      <div class="missie-tekst">
-        <p>Sterke gemeenschappen ontstaan niet vanzelf. Ze hebben plekken nodig — digitaal en fysiek — waar mensen elkaar vinden, van elkaar leren en elkaar verder helpen.</p>
-        <p>Stichting Alemaya bouwt en onderhoudt die plekken. Niet als eenmalig project, maar als infrastructuur die blijft: platforms die jaar na jaar studenten, vakmensen, bewoners en buurtorganisaties met elkaar verbinden.</p>
-        <p>De stichting beoogt geen winst. Middelen komen volledig ten goede aan de doelstelling.</p>
+      <div class="missie-grid">
+        <div class="missie-tekst">
+          <p>Alemaya begint niet bij wat iemand mist, maar bij wat iemand kan leren, maken of bijdragen.</p>
+          <p>Een praktische vaardigheid kan meer zijn dan werk. Het kan zelfvertrouwen geven, mensen bij elkaar brengen en een nieuwe kans openen. Daarom bouwen we plekken en communities waar mensen kunnen oefenen, ontmoeten en doorgroeien.</p>
+          <p>We kijken niet alleen naar wat iemand nodig heeft, maar ook naar wat iemand kan worden en betekenen. Niet als eenmalig project, maar als infrastructuur die blijft. De stichting beoogt geen winst; middelen komen volledig ten goede aan de doelstelling.</p>
+        </div>
+        <div class="statuut">
+          <p>De stichting heeft ten doel het bevorderen van sociale cohesie, gelijke kansen, bestaanszekerheid, maatschappelijke participatie, vakmanschap, opleiding, innovatie, duurzaamheid en zelfredzaamheid, alsmede het tegengaan van sociale uitsluiting.</p>
+          <cite>Statutaire doelstelling · artikel 2.1</cite>
+          <p class="duiding">De formele doelstelling is bewust breed geformuleerd: zo kan de missie in meerdere programma's vorm krijgen.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROGRAMMA'S -->
-  <section id="programmas">
+  <!-- HOE HET WERKT -->
+  <section id="hoe-het-werkt">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Programma's</span>
-        <h2>Eén helder programma, gebouwd op een bewezen platform</h2>
-        <p>Stichting Alemaya is de juridische stichting. Vakgenoten is het maatschappelijke programma rond vakmanschap, ontmoeting en toegankelijke dienstverlening. Kappersmodellen.nl is het eerste bestaande platform binnen Vakgenoten.</p>
+        <span class="eyebrow">Hoe het werkt</span>
+        <h2>Wat groeit, geven we door.</h2>
+        <p>Elke Alemaya-plek volgt hetzelfde eenvoudige ritme. Vakmanschap groeit wanneer mensen ruimte krijgen om te oefenen — en wat groeit, kan verder reizen.</p>
       </div>
-      <div class="prog-list">
-        <article class="prog">
-          <div class="prog-label">Programma 01<span class="status">Actief</span></div>
-          <div class="prog-body">
-            <h3>Vakgenoten <span>· Kappersmodellen.nl</span></h3>
-            <p>Met Vakgenoten bouwt Stichting Alemaya voort op Kappersmodellen.nl: een bestaande community waar kappersstudenten, beginnende vakmensen en modellen elkaar vinden. Het programma maakt vakontwikkeling toegankelijker, versterkt sociale verbinding en verlaagt drempels voor mensen die praktische diensten of oefenkansen zoeken. De stichting richt zich hierbij op versterking van vakontwikkeling, sociale cohesie en toegankelijke praktische dienstverlening.</p>
-            <p>Deelname is kosteloos. Studenten doen praktijkervaring op, deelnemers krijgen een verzorgde behandeling, en opleiders vinden nieuw talent — een uitwisseling waar de buurt als geheel sterker van wordt.</p>
-            <div class="prog-cijfers">
-              <div><strong>7 jaar</strong>onafgebroken actief</div>
-              <div><strong>35.000</strong>communityleden</div>
-              <div><strong>±7.000</strong>oproepen en matches per jaar</div>
-            </div>
+      <div class="model-grid">
+        <div class="stap">
+          <span class="stap-nr">01</span>
+          <h3>Ontmoeten</h3>
+          <p>Mensen vinden elkaar rond een concrete behoefte, vaardigheid of kans.</p>
+        </div>
+        <div class="stap">
+          <span class="stap-nr">02</span>
+          <h3>Leren</h3>
+          <p>Kennis wordt in de praktijk gedeeld en toegepast.</p>
+        </div>
+        <div class="stap">
+          <span class="stap-nr">03</span>
+          <h3>Groeien</h3>
+          <p>Er ontstaat ervaring, vertrouwen, netwerk of perspectief.</p>
+        </div>
+        <div class="stap">
+          <span class="stap-nr">04</span>
+          <h3>Doorgeven</h3>
+          <p>Wie dat wil, kan later zelf iets bijdragen aan een ander.</p>
+        </div>
+      </div>
+      <p class="model-noot">Doorgeven is bij Alemaya een uitnodiging, geen tegenprestatie. Niemand hoeft iets terug te doen — maar wie dat wil, vindt hier de plek daarvoor.</p>
+    </div>
+  </section>
+
+  <!-- VERHALEN: DE VAKGENOOT -->
+  <section class="verhalen" id="verhalen">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Verhalen · in ontwikkeling</span>
+        <h2>De Vakgenoot</h2>
+      </div>
+      <div class="vakgenoot-grid">
+        <div class="vakgenoot-tekst">
+          <p>Achter elk vak zit een mens. Binnen De Vakgenoot willen we de mensen in beeld brengen achter het vakmanschap: wat zij leerden, wie hen hielp en wat zij zelf zouden willen doorgeven.</p>
+          <p>De Vakgenoot wordt een serie korte portretten — in tekst en op termijn ook op video — van mensen uit onze community die iets leren, maken of doorgeven. De eerste portretten zijn in voorbereiding; we tonen ze hier zodra ze er zijn.</p>
+          <div class="vakgenoot-slot">
+            <p>"Dit is wat ik kan. Dit is wat ik doorgeef."</p>
+            <span>De vaste slotregel van elke Vakgenoot</span>
           </div>
-        </article>
+        </div>
+        <div class="concept-kaart">
+          <span class="concept-label">Conceptformat</span>
+          <h3>Zo ziet een portret eruit</h3>
+          <ul>
+            <li>Naam, vak of vaardigheid</li>
+            <li>Wat diegene leerde — en van wie</li>
+            <li>Waar diegene nu staat</li>
+            <li>Wat diegene wil doorgeven</li>
+            <li>Een kort videoportret</li>
+          </ul>
+          <p class="voetnoot">Geen gescripte succesverhalen — echte mensen, in hun eigen woorden.</p>
+        </div>
       </div>
-      <p class="prog-naschrift">De stichting is zo ingericht dat meerdere programma's onder één stevige basis kunnen groeien. Uitbreiding gebeurt zorgvuldig: een nieuw programma start pas wanneer draagvlak, financiering en uitvoering aantoonbaar geregeld zijn.</p>
+      <!--
+        Herbruikbare structuur voor toekomstige Vakgenoot-portretten.
+        Pas activeren wanneer er echt materiaal is; geen fictieve personen tonen.
+
+        <article class="vakgenoot-portret">
+          <img src="images/vakgenoot-NAAM.jpg" alt="Portret van [naam], [vak]" width="800" height="1000" loading="lazy">
+          <h3>[Naam]</h3>
+          <p class="vak">[Vak of vaardigheid]</p>
+          <p>[Korte introductie in eigen woorden]</p>
+          <a href="[videolink]">Bekijk het portret</a>
+        </article>
+      -->
     </div>
   </section>
 
@@ -391,6 +598,71 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
       <p>Wij investeren in wat blijft: mensen die elkaar verder helpen.</p>
     </div>
   </div>
+
+  <!-- PROJECTEN -->
+  <section id="projecten">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Projecten</span>
+        <h2>Waar de missie vandaag al werkt</h2>
+        <p>Alemaya is de stichting en de overkoepelende missie. Vakgenoten is het programma waarin die missie concreet wordt; Kappersmodellen.nl is het eerste bestaande platform binnen dat programma.</p>
+      </div>
+      <div class="prog-list">
+        <article class="prog">
+          <div class="prog-label">Programma 01<span class="status">Actief</span></div>
+          <div class="prog-body">
+            <h3>Vakgenoten <span>· Kappersmodellen.nl</span></h3>
+            <p>Met Vakgenoten bouwt Stichting Alemaya voort op Kappersmodellen.nl: een bestaande community waar kappersstudenten, beginnende vakmensen en modellen elkaar vinden. Het programma maakt vakontwikkeling toegankelijker, versterkt sociale verbinding en verlaagt drempels voor mensen die praktische diensten of oefenkansen zoeken.</p>
+            <p>Deelname is kosteloos. Studenten doen praktijkervaring op, deelnemers krijgen een verzorgde behandeling, en opleiders vinden nieuw talent — een uitwisseling waar iedereen iets brengt en iets meeneemt.</p>
+            <div class="prog-cijfers">
+              <div><strong>7 jaar</strong>onafgebroken actief</div>
+              <div><strong>35.000</strong>communityleden</div>
+              <div><strong>±7.000</strong>oproepen en matches per jaar</div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="prog-naschrift">De stichting is zo ingericht dat meerdere programma's onder dezelfde basis kunnen groeien. Nieuwe initiatieven presenteren we pas wanneer draagvlak, financiering en uitvoering aantoonbaar geregeld zijn.</p>
+    </div>
+  </section>
+
+  <!-- DE DOORGEEFGEDACHTE -->
+  <section class="doorgeef" id="doorgeven">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">De doorgeefgedachte</span>
+        <h2>Wat jij kunt, kan voor een ander het verschil maken.</h2>
+        <p>Doorgeven kent bij Alemaya vele vormen. Deelnemers, vakmensen, vrijwilligers en partners dragen elk op hun eigen manier bij:</p>
+      </div>
+      <div class="geef-lijst">
+        <span>Tijd</span>
+        <span>Kennis</span>
+        <span>Oefenruimte</span>
+        <span>Een introductie</span>
+        <span>Begeleiding</span>
+        <span>Materiaal</span>
+        <span>Praktijkervaring bieden</span>
+      </div>
+      <p class="doorgeef-noot">Niemand hoeft iets terug te doen. Maar wie iets ontving en later zelf iets wil doorgeven, vindt bij Alemaya de plek daarvoor.</p>
+      <div class="dag-blok">
+        <span class="concept-label">Ambitie</span>
+        <h3>De Alemaya Dag</h3>
+        <p>Een toekomstige dag waarop vakgenoten, studenten, makers, buurtbewoners, opleidingen en ondernemers elkaar ontmoeten, vaardigheden delen en nieuwe verbindingen leggen. Nog geen gepland evenement — wel een richting waar we naartoe werken.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVER ALEMAYA / NAAM -->
+  <section class="naam" id="over">
+    <div class="wrap naam-inner">
+      <svg class="logo-mark" width="64" height="64" viewBox="0 0 100 100" role="img" aria-label="Beeldmerk Stichting Alemaya: een A met opgaande zon">
+        <path d="M50 14 L20 88 M50 14 L80 88" stroke="#2B2825" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
+      </svg>
+      <h2>Waarom Alemaya</h2>
+      <p>Alemaya staat voor groei, verbinding en het doorgeven van kansen. De stichting bouwt voort op bestaande gemeenschappen en maakt daarvan praktische voorzieningen die mensen verder helpen. Niet als tijdelijk project, maar als infrastructuur die blijft bestaan en door meerdere programma's kan worden gedragen. De opgaande zon in ons beeldmerk staat voor precies dat: iets dat elke dag opnieuw begint.</p>
+    </div>
+  </section>
 
   <!-- WERKWIJZE / GOVERNANCE -->
   <section class="gov" id="werkwijze">
@@ -429,18 +701,6 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
     </div>
   </section>
 
-  <!-- NAAM -->
-  <section class="naam">
-    <div class="wrap naam-inner">
-      <svg class="logo-mark" width="64" height="64" viewBox="0 0 100 100" role="img" aria-label="Beeldmerk Stichting Alemaya: een A met opgaande zon">
-        <path d="M50 14 L20 88 M50 14 L80 88" stroke="#2B2825" stroke-width="7" stroke-linecap="round" fill="none"/>
-        <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
-      </svg>
-      <h2>Waarom Alemaya</h2>
-      <p>Alemaya staat voor groei, verbinding en het doorgeven van kansen. De stichting bouwt voort op bestaande gemeenschappen en maakt daarvan praktische voorzieningen die mensen verder helpen. Niet als tijdelijk project, maar als infrastructuur die blijft bestaan en door meerdere programma's kan worden gedragen.</p>
-    </div>
-  </section>
-
   <!-- VERANTWOORDINGSREGISTER -->
   <section class="register" id="verantwoording">
     <div class="wrap">
@@ -470,13 +730,13 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
+  <!-- SAMENWERKEN / CONTACT -->
+  <section class="contact" id="samenwerken">
     <div class="wrap contact-grid">
       <div>
-        <span class="eyebrow" style="display:block;margin-bottom:14px">Contact</span>
+        <span class="eyebrow" style="display:block;margin-bottom:14px">Samenwerken</span>
         <h2>In gesprek over samenwerking</h2>
-        <p>Bent u fonds, gemeente of maatschappelijke organisatie en wilt u meer weten over onze programma's, begroting of werkwijze? Wij lichten onze plannen graag persoonlijk toe.</p>
+        <p>Bent u fonds, gemeente of maatschappelijke organisatie en wilt u meer weten over onze programma's, begroting of werkwijze? Wij lichten onze plannen graag persoonlijk toe. Ook opleidingen, ondernemers en vakmensen die iets willen doorgeven, zijn van harte welkom.</p>
         <p>Beoordeelt u een aanvraag? Op de pagina <a href="subsidieverleners.html">voor subsidieverleners</a> vindt u bewijs, governance en documenten overzichtelijk bij elkaar.</p>
       </div>
       <div class="contact-blok">
@@ -500,6 +760,7 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
       </svg>
       <span>© 2026 Stichting Alemaya</span>
     </div>
+    <a href="subsidieverleners.html">Voor subsidieverleners</a>
     <div>Stichting Alemaya · Vakmanschap &amp; verbinding</div>
   </div>
 </footer>
