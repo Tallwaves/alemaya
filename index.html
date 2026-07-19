@@ -235,45 +235,6 @@ section{padding:96px 0}
   margin-top:44px;font-size:14.5px;color:var(--inkt-zacht);max-width:60ch;
 }
 
-/* Verhalen — De Vakgenoot */
-.verhalen{background:var(--wit);border-top:1px solid var(--lijn);border-bottom:1px solid var(--lijn)}
-.vakgenoot-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:start}
-@media(max-width:860px){.vakgenoot-grid{grid-template-columns:1fr;gap:40px}}
-.vakgenoot-tekst p{color:var(--inkt-zacht)}
-.vakgenoot-tekst p + p{margin-top:18px}
-.vakgenoot-slot{
-  margin-top:30px;border-left:3px solid var(--terra);padding:4px 0 4px 24px;
-}
-.vakgenoot-slot p{
-  font-family:'Source Serif 4',Georgia,serif;font-style:italic;
-  font-size:20px;line-height:1.5;color:var(--charcoal);
-}
-.vakgenoot-slot span{
-  display:block;margin-top:10px;font-size:12.5px;font-weight:600;
-  letter-spacing:0.1em;text-transform:uppercase;color:var(--inkt-zacht);
-}
-.concept-kaart{
-  border:1px solid var(--lijn);background:var(--papier);padding:32px 30px;
-}
-.concept-label{
-  display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:0.08em;
-  text-transform:uppercase;color:var(--inkt-zacht);
-  border:1px solid var(--lijn);border-radius:2px;padding:4px 10px;margin-bottom:20px;
-  background:var(--wit);
-}
-.concept-kaart h3{font-size:18.5px;color:var(--charcoal);margin-bottom:14px}
-.concept-kaart ul{list-style:none;margin-top:4px}
-.concept-kaart li{
-  font-size:15px;color:var(--inkt-zacht);padding:10px 0 10px 26px;
-  border-bottom:1px solid var(--lijn);position:relative;
-}
-.concept-kaart li:last-child{border-bottom:none}
-.concept-kaart li::before{
-  content:"";position:absolute;left:2px;top:19px;
-  width:12px;height:2px;background:var(--terra);
-}
-.concept-kaart .voetnoot{font-size:13.5px;color:var(--inkt-zacht);margin-top:18px}
-
 /* Fotoband */
 .beeldband{
   position:relative;padding:130px 0;
@@ -329,13 +290,6 @@ section{padding:96px 0}
   padding:8px 16px;border-radius:2px;letter-spacing:0.02em;
 }
 .doorgeef-noot{margin-top:26px;font-size:15.5px;color:var(--inkt-zacht);max-width:62ch}
-.dag-blok{
-  margin-top:56px;border:1px solid var(--lijn);background:var(--papier);
-  padding:34px 32px;max-width:720px;
-}
-.dag-blok .concept-label{margin-bottom:16px}
-.dag-blok h3{font-size:20px;color:var(--charcoal);margin-bottom:10px}
-.dag-blok p{font-size:15px;color:var(--inkt-zacht)}
 
 /* Naam / Over Alemaya */
 .naam{
@@ -442,7 +396,6 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
     <nav class="nav-desktop" aria-label="Hoofdnavigatie">
       <a href="#missie">Onze missie</a>
       <a href="#hoe-het-werkt">Hoe het werkt</a>
-      <a href="#verhalen">Verhalen</a>
       <a href="#projecten">Projecten</a>
       <a href="#over">Over Alemaya</a>
       <a href="#samenwerken">Samenwerken</a>
@@ -452,7 +405,6 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
       <nav aria-label="Mobiel menu">
         <a href="#missie">Onze missie</a>
         <a href="#hoe-het-werkt">Hoe het werkt</a>
-        <a href="#verhalen">Verhalen</a>
         <a href="#projecten">Projecten</a>
         <a href="#over">Over Alemaya</a>
         <a href="#samenwerken">Samenwerken</a>
@@ -547,49 +499,7 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
     </div>
   </section>
 
-  <!-- VERHALEN: DE VAKGENOOT -->
-  <section class="verhalen" id="verhalen">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Verhalen · in ontwikkeling</span>
-        <h2>De Vakgenoot</h2>
-      </div>
-      <div class="vakgenoot-grid">
-        <div class="vakgenoot-tekst">
-          <p>Achter elk vak zit een mens. Binnen De Vakgenoot willen we de mensen in beeld brengen achter het vakmanschap: wat zij leerden, wie hen hielp en wat zij zelf zouden willen doorgeven.</p>
-          <p>De Vakgenoot wordt een serie korte portretten — in tekst en op termijn ook op video — van mensen uit onze community die iets leren, maken of doorgeven. De eerste portretten zijn in voorbereiding; we tonen ze hier zodra ze er zijn.</p>
-          <div class="vakgenoot-slot">
-            <p>"Dit is wat ik kan. Dit is wat ik doorgeef."</p>
-            <span>De vaste slotregel van elke Vakgenoot</span>
-          </div>
-        </div>
-        <div class="concept-kaart">
-          <span class="concept-label">Conceptformat</span>
-          <h3>Zo ziet een portret eruit</h3>
-          <ul>
-            <li>Naam, vak of vaardigheid</li>
-            <li>Wat diegene leerde — en van wie</li>
-            <li>Waar diegene nu staat</li>
-            <li>Wat diegene wil doorgeven</li>
-            <li>Een kort videoportret</li>
-          </ul>
-          <p class="voetnoot">Geen gescripte succesverhalen — echte mensen, in hun eigen woorden.</p>
-        </div>
-      </div>
-      <!--
-        Herbruikbare structuur voor toekomstige Vakgenoot-portretten.
-        Pas activeren wanneer er echt materiaal is; geen fictieve personen tonen.
-
-        <article class="vakgenoot-portret">
-          <img src="images/vakgenoot-NAAM.jpg" alt="Portret van [naam], [vak]" width="800" height="1000" loading="lazy">
-          <h3>[Naam]</h3>
-          <p class="vak">[Vak of vaardigheid]</p>
-          <p>[Korte introductie in eigen woorden]</p>
-          <a href="[videolink]">Bekijk het portret</a>
-        </article>
-      -->
-    </div>
-  </section>
+  <!-- Toekomstige sectie: De Vakgenoot (verhalenreeks) — teruggezet zodra er echt portretmateriaal is; zie git-historie -->
 
   <!-- FOTOBAND -->
   <div class="beeldband" role="img" aria-label="Jonge kiemplant die opkomt uit de grond">
@@ -644,11 +554,6 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
         <span>Praktijkervaring bieden</span>
       </div>
       <p class="doorgeef-noot">Niemand hoeft iets terug te doen. Maar wie iets ontving en later zelf iets wil doorgeven, vindt bij Alemaya de plek daarvoor.</p>
-      <div class="dag-blok">
-        <span class="concept-label">Ambitie</span>
-        <h3>De Alemaya Dag</h3>
-        <p>Een toekomstige dag waarop vakgenoten, studenten, makers, buurtbewoners, opleidingen en ondernemers elkaar ontmoeten, vaardigheden delen en nieuwe verbindingen leggen. Nog geen gepland evenement — wel een richting waar we naartoe werken.</p>
-      </div>
     </div>
   </section>
 
@@ -758,7 +663,7 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
         <path d="M50 14 L20 88 M50 14 L80 88" stroke="#5C554C" stroke-width="8" stroke-linecap="round" fill="none"/>
         <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
       </svg>
-      <span>© 2026 Stichting Alemaya</span>
+      <span>© 2026 Stichting Alemaya · KvK 42117293</span>
     </div>
     <a href="subsidieverleners.html">Voor subsidieverleners</a>
     <div>Stichting Alemaya · Vakmanschap &amp; verbinding</div>
