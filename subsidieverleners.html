@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voor subsidieverleners — Stichting Alemaya</title>
 <meta name="description" content="Informatie voor fondsen, gemeenten en publieke partners: bewijs, governance, verantwoording en documenten van Stichting Alemaya en het programma Vakgenoten / Kappersmodellen.nl.">
+<link rel="canonical" href="https://alemaya.nl/subsidieverleners">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stichting Alemaya">
+<meta property="og:title" content="Voor subsidieverleners — Stichting Alemaya">
+<meta property="og:description" content="Informatie voor fondsen, gemeenten en publieke partners: bewijs, governance, verantwoording en documenten van Stichting Alemaya.">
+<meta property="og:url" content="https://alemaya.nl/subsidieverleners">
+<meta property="og:locale" content="nl_NL">
 <script>
   if (/\.pages\.dev$/.test(location.hostname)) {
     document.write('<meta name="robots" content="noindex, nofollow">');
@@ -61,7 +68,7 @@ h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;font-weight:500;line-height:
   letter-spacing:0.22em;color:var(--charcoal);line-height:1;
 }
 .lockup-sub{
-  font-size:9.5px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;
+  font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--terra);line-height:1;
 }
 
@@ -75,14 +82,42 @@ header{
   display:flex;align-items:center;justify-content:space-between;
   padding:16px 0;
 }
-nav{display:flex;gap:32px}
-nav a{
-  text-decoration:none;font-size:14.5px;font-weight:500;color:var(--inkt-zacht);
+.nav-desktop{display:flex;gap:26px}
+.nav-desktop a{
+  text-decoration:none;font-size:14px;font-weight:500;color:var(--inkt-zacht);
   transition:color .15s;
 }
-nav a:hover{color:var(--terra)}
-nav a[aria-current="page"]{color:var(--terra)}
-@media(max-width:720px){nav{display:none}}
+.nav-desktop a:hover{color:var(--terra)}
+.nav-desktop a[aria-current="page"]{color:var(--terra)}
+
+/* Mobiel menu — zonder JavaScript, via details/summary */
+.menu-mobiel{display:none;position:relative}
+.menu-mobiel summary{
+  list-style:none;display:inline-flex;align-items:center;gap:10px;
+  font-size:14px;font-weight:600;color:var(--inkt-zacht);
+  cursor:pointer;padding:8px 4px;
+}
+.menu-mobiel summary::-webkit-details-marker{display:none}
+.menu-lijnen{
+  display:inline-block;width:16px;height:2px;background:currentColor;
+  box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;
+}
+.menu-mobiel nav{
+  position:absolute;right:0;top:calc(100% + 12px);
+  background:var(--wit);border:1px solid var(--lijn);
+  min-width:236px;padding:8px 0;z-index:60;
+  box-shadow:0 16px 34px -20px rgba(43,40,37,0.3);
+}
+.menu-mobiel nav a{
+  display:block;text-decoration:none;font-size:15px;font-weight:500;
+  color:var(--inkt);padding:11px 24px;
+}
+.menu-mobiel nav a:hover{color:var(--terra);background:var(--papier)}
+summary:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+@media(max-width:880px){
+  .nav-desktop{display:none}
+  .menu-mobiel{display:block}
+}
 
 /* ── Paginakop ─────────────────────────── */
 .paginakop{
@@ -240,15 +275,24 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
       </svg>
       <span class="lockup-tekst">
         <span class="lockup-naam">alemaya</span>
-        <span class="lockup-sub">Stichting</span>
+        <span class="lockup-sub">Vakmanschap &amp; verbinding</span>
       </span>
     </a>
-    <nav aria-label="Hoofdnavigatie">
-      <a href="index.html#programmas">Programma's</a>
-      <a href="index.html#werkwijze">Werkwijze</a>
+    <nav class="nav-desktop" aria-label="Hoofdnavigatie">
+      <a href="index.html#missie">Onze missie</a>
+      <a href="index.html#projecten">Projecten</a>
       <a href="subsidieverleners.html" aria-current="page">Voor subsidieverleners</a>
       <a href="#contact">Contact</a>
     </nav>
+    <details class="menu-mobiel">
+      <summary><span class="menu-lijnen" aria-hidden="true"></span>Menu</summary>
+      <nav aria-label="Mobiel menu">
+        <a href="index.html#missie">Onze missie</a>
+        <a href="index.html#projecten">Projecten</a>
+        <a href="subsidieverleners.html" aria-current="page">Voor subsidieverleners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -408,7 +452,7 @@ footer{border-top:1px solid var(--lijn);padding:36px 0 44px}
         <path d="M50 14 L20 88 M50 14 L80 88" stroke="#5C554C" stroke-width="8" stroke-linecap="round" fill="none"/>
         <path d="M37 76 A 13 13 0 0 1 63 76 Z" fill="#C05A2E"/>
       </svg>
-      <span>© 2026 Stichting Alemaya</span>
+      <span>© 2026 Stichting Alemaya · KvK 42117293</span>
     </div>
     <div>Stichting Alemaya · Vakmanschap &amp; verbinding</div>
   </div>
